@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para ti, mi panecito 💗</title>
+  <!-- Enlace CORRECTO a estilos.css -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <div class="pantalla-inicio" id="pantallaInicio">
+    <p>Haz click en el botón, chula :3</p>
+    <button onclick="iniciarPagina()">Iniciar</button>
+  </div>
+
+  <audio id="miAudio" loop>
+    <source src="assets/Pegado a Tus Huesos.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio 😢
+  </audio>
+
+  <div class="contenido" id="contenidoPagina">
+    <h1>Te amo con todo mi corazón 💕</h1>
+    <p>Eres mi persona favorita en el mundo. Por cierto, felices 20 meses 💌</p>
+
+    <div class="galeria">
+      <img src="assets/foto1.jpg" alt="Foto 1" onclick="mostrarImagen('assets/foto1.jpg', 'Esta fue una salida bonita sin tanta planeación 💖')">
+      <img src="assets/foto2.jpg" alt="Foto 2" onclick="mostrarImagen('assets/foto2.jpg', 'Nunca olvidaré este momento tan lindo contigo 💘')">
+      <img src="assets/foto3.jpg" alt="Foto 3" onclick="mostrarImagen('assets/foto3.jpg', 'Eres el amor de mi vida 💝')">
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <img id="imagenGrande" src="" alt="Imagen ampliada">
+    <p id="mensajeBonito"></p>
+    <div class="cerrar" onclick="cerrarOverlay()">Cerrar ✨</div>
+  </div>
+
+  <script>
+    // Permite el audio después de un click (requerido en GitHub Pages)
+    document.body.addEventListener('click', () => {
+      document.getElementById('miAudio').play().catch(e => console.log(e));
+    }, { once: true });
+
+    function iniciarPagina() {
+      document.getElementById("pantallaInicio").style.display = "none";
+      document.getElementById("contenidoPagina").style.display = "block";
+    }
+
+    function mostrarImagen(src, mensaje) {
+      document.getElementById('imagenGrande').src = src;
+      document.getElementById('mensajeBonito').textContent = mensaje;
+      document.getElementById('overlay').style.display = 'flex';
+    }
+
+    function cerrarOverlay() {
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

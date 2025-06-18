@@ -1,0 +1,128 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', cursive;
+  background: url('assets/fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+/* Pantalla de inicio */
+.pantalla-inicio {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.pantalla-inicio button {
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-size: 1.2em;
+  background-color: #ff69b4;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 15px pink;
+  transition: transform 0.2s;
+}
+
+.pantalla-inicio button:hover {
+  transform: scale(1.1);
+}
+
+/* Contenido principal */
+.contenido {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 25px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 0 20px pink;
+  max-width: 800px;
+  margin: 80px auto;
+  animation: fadeIn 2s ease;
+  display: none;
+}
+
+h1 {
+  font-size: 3em;
+  color: #ff1493;
+}
+
+p {
+  font-size: 1.3em;
+  color: #c71585;
+  margin-bottom: 30px;
+}
+
+/* Galería */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.galeria img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 3px solid #ffb6c1;
+  box-shadow: 0 0 10px #ff69b4;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
+/* Overlay de imágenes */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.overlay img {
+  max-width: 90vw;
+  max-height: 70vh;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 30px white;
+}
+
+.overlay p {
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.overlay .cerrar {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #ffd1dc;
+  cursor: pointer;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
